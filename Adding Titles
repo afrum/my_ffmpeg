@@ -1,0 +1,58 @@
+# Adding Titles in different ways - output example on youtube https://youtu.be/xrKnMWGYTxo
+#-------------------------------------------------
+# Using drawtext command for a centered title
+
+ffmpeg -i input.mp4 -vf "drawtext=enable='lte(t,10)'\
+:text='Title text goes here'\
+:fontsize=100\
+:fontcolor=white\
+:borderw=7\
+:x=(w-text_w)/2:y=(h-text_h)/2" output.mp4
+
+# I found this link https://ffmpeg.org/ffmpeg-filters.html#Examples-62
+# another link I found for positioning the text https://superuser.com/questions/939357/how-to-position-drawtext-text
+
+#-------------------------------------------------
+
+# Creating an Title image to overlay on your video
+
+# first create the text image using imagemagick
+
+convert  -background none -fill white -font mona \
+-pointsize 48 label:'Add text here' Text.gif
+
+
+# I got this from https://legacy.imagemagick.org/Usage/text/#label
+
+# if the font doesn't work you can have a look at what fonts you have
+# you can type the full address for the font e.g. -font /path/to/font/special_font.ttf
+# to get a list of the fonts with addresses type the following command
+
+convert -list font
+
+# heres where I found the above command https://legacy.imagemagick.org/discourse-server/viewtopic.php?t=12741
+
+# overlay The title label over the video
+
+ffmpeg -i input.mp4 -i Text.gif \
+-filter_complex "[0:v][1:v] \
+overlay=(main_w-overlay_w)/2:(main_h-overlay_h)/2 \
+:enable='between(t,0,10)'" -pix_fmt yuv420p \
+-c:a copy output.mp4
+
+# the above command is from a question answered in the link: https://video.stackexchange.com/questions/12105/add-an-image-overlay-in-front-of-video-using-ffmpeg
+# and for centering the text the link https://stackoverflow.com/questions/31284841/i-cant-overlay-and-center-a-video-on-top-of-an-image-with-ffmpeg-the-output-is
+#---------------------------------------------------------------------
+
+#for adding multiple titles/images I used the command below:
+
+ffmpeg -i input.mp4 -i Title0.gif -i Title1.gif -i Title2.gif -i Title3.png \
+-filter_complex "[0][1]overlay=25:25:enable='between(t,0,20)'[v1]; \
+[v1][2]overlay=25:100:enable='between(t,0,20)'[v2];\
+[v2][3]overlay=25:200:enable='between(t,10,20)'[v3];\
+[v3][4]overlay=25:270:enable='between(t,0,20)'[v4]" -map "[v4]" \
+-pix_fmt yuv420p -c:a copy output.mp4
+
+# it matters what image type you use if you want "see through" parts.
+# I used a .png suffix when using mypaint painting software.
+#-------------------------------------------------------------------
