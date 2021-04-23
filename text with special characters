@@ -1,0 +1,14 @@
+# escape characters are the characters that you need to use to get the special characters to "show up", 
+# Basically, most of the time you can just put an extra backslash in front of the character 
+# if you are typing in the text in the command to add a backslash I had to type 10 backslashes
+# the output text for the command below is \%@!$:#
+
+ffmpeg -i input.mp4 -vf "drawtext=text='\\\\\\\\\\\%\@\!\$\:\#':fontsize=100:fontcolor=white:borderw=7:y=400:x=100" output.mp4
+
+# or you could use a textfile instead and if you do that you only have to use 1 backslash to escape the backslash
+
+echo '\\\%\@\!\$\:\#' > text.txt
+ffmpeg -i input.mp4 -vf "drawtext=textfile=text.txt:fontsize=100:fontcolor=white:borderw=7:y=400:x=100" output.mp4
+
+# these are 2 different methods to do the same thing.
+# here is where I got my information https://ffmpeg.org/ffmpeg-all.html#Quoting-and-escaping
