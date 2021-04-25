@@ -1,3 +1,4 @@
+# Using special characters with drawtext - link to youtube video https://youtu.be/T0oXovKTiiU
 # escape characters are the characters that you need to use to get the special characters to "show up", 
 # Basically, most of the time you can just put an extra backslash in front of the character 
 # if you are typing in the text in the command to add a backslash I had to type 10 backslashes
