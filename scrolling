@@ -1,0 +1,12 @@
+# Scrolling - youtube link https://youtu.be/OYOmvSDEUZ0
+# here's the command for a horizontal scroll. if you want vertical scroll replace the h with a v.
+
+ffmpeg -i input.mp4  -vf "scroll=h=0.001,crop=640:360:0:ih" outputscroll.mp4
+
+# this is the command for scrolling through a photo: 
+
+ffmpeg -loop 1 -framerate 30 -i input.JPG -vf "scroll=0.001,crop=640:360:0:ih,format=yuv420p" -preset veryslow -crf 18 -t 10 output.mp4
+
+# I got the command above from the link https://twitter.com/FFmpeg/status/1180179571456372737
+
+# note: when I tried to make an .MOV file it didn't seem to work.
