@@ -5,7 +5,7 @@
 + [Drawing a grid](Draw%20grid%20lines) - examples to add gridlines to a video | [youtube example](https://www.youtube.com/watch?v=3ko598TeSjs)|  
 + [Color background](lavfi) - making a plain background and other lavfi examples| [youtube example](https://www.youtube.com/watch?v=ysMyZggmQfQ)|  
 ## Still images (logos, pictures, photos)  
-+ Scrolling | [youtube example](https://www.youtube.com/watch?v=OYOmvSDEUZ0)|  
++ [Scrolling](scrolling) - examples using a video or photo to scroll across | [youtube example](https://www.youtube.com/watch?v=OYOmvSDEUZ0)|  
 + Logos | [youtube example](https://www.youtube.com/watch?v=SyFlTidTlOA&t=13s)|  
 + Combining photos | [youtube example](https://www.youtube.com/watch?v=8x3Nldwx7Hk)|  
 ## Editing a single Video  
