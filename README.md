@@ -3,7 +3,7 @@
 + [Text with special characters](/text%20with%20special%20characters) - example code with comments | [youtube example](https://www.youtube.com/watch?v=T0oXovKTiiU)|  
 + [Rolling credits](/Rolling%20credits) - example code of credits scrolling up from bottom | [youtube example](https://www.youtube.com/watch?v=AnsaJLUIPjs)|  
 + [Drawing a grid](Draw%20grid%20lines) - examples to add gridlines to a video | [youtube example](https://www.youtube.com/watch?v=3ko598TeSjs)|  
-+ Color background | [youtube example](https://www.youtube.com/watch?v=ysMyZggmQfQ)|  
++ [Color background](lavfi) - making a plain background and other lavfi examples| [youtube example](https://www.youtube.com/watch?v=ysMyZggmQfQ)|  
 ## Still images (logos, pictures, photos)  
 + Scrolling | [youtube example](https://www.youtube.com/watch?v=OYOmvSDEUZ0)|  
 + Logos | [youtube example](https://www.youtube.com/watch?v=SyFlTidTlOA&t=13s)|  
