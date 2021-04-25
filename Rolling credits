@@ -1,0 +1,15 @@
+#MAKING ROLLING CREDITS example on youtube https://youtu.be/AnsaJLUIPjs
+
+#I wanted to see if I could make some rolling credits for the end of my video's I found this example:
+
+ffmpeg -i input.mkv -vf "drawtext=textfile=credits.txt: x=200: y=h-80*t: fontsize=36:fontcolor=white@0.9: box=1: boxcolor=black@0.6" -c:a copy outputCredits.mkv
+
+#(input.mkv - is the name of the video I'm using)
+#(credits.txt - a text file that I want to roll through)
+#(outputCredits.mkv - is the created file)
+
+#Links for making credits:
+#https://ottverse.com/ffmpeg-drawtext-filter-dynamic-overlays-timecode-scrolling-text-credits/
+#https://ffmpeg.org/ffmpeg-filters.html#drawtext-1
+
+#Thankyou Jesse Gallagher for the music in my video called Thin Places
