@@ -1,0 +1,44 @@
+# FFMPEG
+# lavfi (Libavfilter input virtual device.) youtube video link https://youtu.be/ysMyZggmQfQ
+
+
+# to make a 4 minute plain black video:
+ffmpeg -f lavfi -i color=c=black:duration=240:size=1920x1080 blank4min.mkv
+
+
+# Here's a link to lavfi in the online documentation: https://ffmpeg.org/ffmpeg-all.html#lavfi
+
+
+# In the first example you create a color video stream and play it back with ffplay:
+
+
+ffplay -f lavfi -graph "color=c=pink [out0]" dummy
+
+# the same command but removed the graph and "out0" labels:
+
+ffplay -f lavfi color=c=pink
+
+
+# three different video test filtered sources and played them:
+
+ffplay -f lavfi -graph "testsrc [out0]; testsrc,hflip [out1];testsrc,negate [out2]" test3
+
+
+
+# an example to read an audio stream from a file using the amovie source and play it back with ffplay:
+
+ffplay -f lavfi "amovie=Doom666.mp3"
+
+#(If you look hard you might be able to see the hidden image?)
+# I chose the Doom soundtrack because I knew that they had somehow put image into the sound, 
+# I don't understand it and I don't know how they did it.
+# I found a better visualisation in this link: https://www.youtube.com/watch?v=yzFit0nldf4
+
+# I also found an ffmpeg example in the following link: https://www.bogotobogo.com/FFMpeg/ffmpeg_video_test_patterns_src.php
+
+# This example will create a 10 second output, 30 fps (300 frames total):
+
+ffmpeg -f lavfi -i testsrc=duration=10:size=1920x1080:rate=30 testsrc.mp4
+
+# There are some other examples on the links that I've provided, 
+# and the ffmpeg manual goes into more detail about what lavfi is.
