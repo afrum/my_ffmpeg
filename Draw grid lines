@@ -1,0 +1,20 @@
+# put a grid on video or play a video with gridlines on it to work out placement 
+# you could also make a simple frame if you wanted. 
+# links where I got the information:
+# https://ffmpeg.org/ffmpeg-all.html#Examples-99
+# https://hhsprings.bitbucket.io/docs/programming/examples/ffmpeg/video_data_visualization/drawgrid.html
+
+# play video with grid over it
+ffplay -i input.mp4 -vf drawgrid=width=100:height=100:thickness=2:color=red
+
+# create video with 2 different sets of gridlines of differing width, height and color.
+ffmpeg -i input.mp4 -an -filter_complex "[0:v]drawgrid=width=20:height=20:thickness=2:color=red,drawgrid=c=blue:w=100:h=100:t=4 [v]" -map '[v]' -t 5 output.mp4
+
+# create video where drawgrids using the width and height of the video the red gridline shows lines on the 
+# border and through the center horizontally and vertically
+
+ffmpeg -i input.mp4 -vf drawgrid=w=iw/2:h=ih/2:t=4:c=red output.mp4
+
+# make a blue frame for a video 1920x1080
+ffmpeg -i input.mp4 -vf drawgrid=w=1820:h=980:t=100:c=blue output.mp4
+
