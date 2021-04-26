@@ -1,0 +1,37 @@
+# Adding or removing logos https://youtu.be/SyFlTidTlOA
+# these examples are from https://ffmpeg.org/ffmpeg-all.html#Examples-125
+# I show 5 examples that I have adapted from the online documentation examples. 
+
+# add a logo to the bottom left:
+
+ffmpeg -i input.MOV -i logo_image.jpg -filter_complex 'overlay=x=10:y=main_h-overlay_h-10' output.MOV
+
+# the x=10:y=main_h-overlay_h-10 indicates the x and y coordinates. moving right along the x axis 10 pixels
+# then moving down the height of the video minus the height of the logo and a 10 pixel border.
+
+# add a logo to the bottom right:
+
+ffmpeg -i input.MOV -i logo_image.png -filter_complex 'overlay=main_w-overlay_w-10:main_h-overlay_h-10' output.MOV
+
+# you don't need to put x= and y= but it helps for reading. The order is x coordinate:y coordinate 
+
+# add logos to bottom left and right:
+
+ffmpeg -i input.MOV -i logo_left.png -i logo_right.png -filter_complex 'overlay=x=10:y=H-h-10,overlay=x=W-w-10' output.MOV
+
+# you can substitute main_h for H and main_w for W and overlay_h for h and overlay_w for w
+
+# adding a color over an area:
+
+ffmpeg -i input.MOV -vf "color=c=red@.3:size=800x800[over];[in][over] overlay=shortest=1" output.MOV
+
+# the @.3 makes the color more transparent if you delete that it will be a solid color
+
+# removing a logo:
+
+ffmpeg -i input.MOV -vf delogo=10:540:500:530 output.MOV
+
+# for this example the area to delogo is a rectangle area, whose top left corner is at the x coordinate of 10 pixels and 
+# y coordinate of 540 pixels and is of size 500x530
+
+
