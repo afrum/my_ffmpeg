@@ -1,0 +1,14 @@
+# timebase error - youtube video https://youtu.be/55O9c169Zc4
+# having different file types (e.g .mkv and .mp4) can cause errors 
+
+# example to change an mp4 to an mkv:
+ffmpeg -i i2.mp4 i2.mkv
+
+# if you still have a timebase error you can change both videos to have the same timebase:
+ffmpeg -i input.mp4 -codec:v mpeg4 -r 29.97 -qscale:v 2 output.mp4
+
+# do this command to both the videos so their timebase details will match.
+
+# then you can perform the xfade, blend, concat, etc... commands 
+# and hopefully it will work. so far it has worked for me. 
+# I found the solution at this link: https://stackoverflow.com/questions/15931437/ffmpeg-how-to-control-fps-tbr-tbn-tbc-parameters
