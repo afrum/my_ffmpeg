@@ -20,8 +20,8 @@
 + [Cut](segmenting) - making multiple videos by cutting one video into even time segments  | [youtube example](https://www.youtube.com/watch?v=sAl1lZMVr5A)|  
 + [Padding](padding) - add padding around a video | [youtube example](https://www.youtube.com/watch?v=peGJZ1kK624)|  
 + [Error](timebase_error) - a possible solution for timebase error| [youtube example](https://www.youtube.com/watch?v=55O9c169Zc4)|  
-+ [Fade](fading) -in and out video and audio | [youtube example](https://youtu.be/5uUkBh3qUGc)|  
-+ Reverse | [youtube example](https://www.youtube.com/watch?v=3PfCwbNXAV0)|  
++ [Fade](fading) - in and out video and audio | [youtube example](https://youtu.be/5uUkBh3qUGc)|  
++ [Reverse](reverse) - making one or many videos in reverse | [youtube example](https://www.youtube.com/watch?v=3PfCwbNXAV0)|  
 ## Editing Multiple videos    
 + Mozaic | [youtube example](https://www.youtube.com/watch?v=mfUDKNRMBRY)|  
 + Side by Side | [youtube example](https://www.youtube.com/watch?v=0Bv6FDD94M0)|  
