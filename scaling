@@ -1,0 +1,28 @@
+# Scaling - heres the video example https://youtu.be/FQGZobyvJm8
+
+# Scale to half the size
+ffmpeg -i input.MOV -vf "scale=iw*.5:ih*.5" output_half_size.MOV
+
+# Scale to double the size
+ffmpeg -i input.MOV -vf "scale=iw*2:ih*2" output_double_size.MOV
+
+# Scale by defined width and height this example is 320 pixels wide by 240 pixels high
+ffmpeg -i input.MOV -vf "scale=320:240" output_320x240.MOV
+
+# Scale by width defined as 32o and height to be proportionately scaled by current height
+ffmpeg -i input.MOV -vf "scale=320:-1" output_defined_width_only.MOV
+
+# Scale by height defined as 240 and width to be proportionately scaled by current height
+ffmpeg -i input.MOV -vf "scale=-1:240" output_defined_height_only.MOV
+
+
+
+# here is the link to where I got my information from https://trac.ffmpeg.org/wiki/Scaling
+# input.MOV is the video that I want to change in size
+# -vf visual filtergraph, a simple filtergraph
+# "scale=iw*.5:ih*.5" or you could type "scale=iw/2:ih/2" both will halve the iw (input width) and ih (input height) of the input video
+# output_half_size.MOV is the video that has been scaled down. 
+# we can scale in other ways for example...
+# if you want to define the width and height you can type scale=320:240 320 is the width and 240 is the height
+# if you change the scale it can make the video look stretched or squashed, if you want to change the width and let the command work out what the height should be you can type scale=320:-1 the video is 320 wide and the -1 shows that you want the program to work out the height.
+# These are the scaling commands that I use the most but if you want to know more then go to the link I have provided earlier and in the notes.
