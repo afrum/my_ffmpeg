@@ -1,0 +1,12 @@
+# lagfun gives trails to the moving parts of the video here is a link to a video example https://youtu.be/-IECY9t-7xA
+
+ffmpeg -i input.MOV -vf lagfun output.MOV
+
+# I also used the blend command on my input video and I have 2 videos about the blend command:
+# https://youtu.be/2CT7h9i2Eqk https://youtu.be/yrUGUrYfccY
+
+# and to make the image I used krita and just used the gradient tool 
+# which I also have made a video on how to use because I had trouble finding the button, here's that video:
+# https://youtu.be/OHjNrFU0TtY
+
+# here is the link to the documentation: https://ffmpeg.org/ffmpeg-all.html#lagfun
