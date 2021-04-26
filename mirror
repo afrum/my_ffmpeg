@@ -1,0 +1,10 @@
+# Mirror the left half onto the right half - my video example https://youtu.be/ybfjG0xiuN8
+
+ffmpeg -i originalvideo.MOV -vf "crop=iw/2:ih:0:0,split[left][tmp];[tmp]hflip[right];[left][right] hstack" output.MOV
+
+# the above command was taken from https://trac.ffmpeg.org/wiki/FancyFilteringExamples#mirroreffect
+
+# I slightly changed the command so that I could get an output file. 
+# I got the link to the ffmpeg website from looking 
+# at a video on the mandlebrot filter effect that I might try out too.
+# The link is https://youtu.be/PFiSjTnqqIg
