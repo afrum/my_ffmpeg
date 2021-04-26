@@ -1,4 +1,4 @@
-# adding still images together in a slideshow video my example video https://www.youtube.com/watch?v=8x3Nldwx7Hk
+# adding still images together in a slideshow video my example video https://youtu.be/8x3Nldwx7Hk
 
 cat *.JPG | ffmpeg -framerate 3 -f image2pipe -i - output.MOV
 
