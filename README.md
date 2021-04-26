@@ -13,7 +13,7 @@
 + [Adjust Saturation](brightness_and_saturation)  - example command that adjusts saturation with comments| [youtube example](https://www.youtube.com/watch?v=el6njF-7fIA)|  
 + [Lag effect (trippy)](lagfun_trails) - example command of video that leaves trails of previous frames | [youtube example](https://www.youtube.com/watch?v=-IECY9t-7xA)|  
 + [Hex values](hex_datascope) - example shows hexadecimal pixel values of part of video | [youtube example](https://www.youtube.com/watch?v=aUg5u6PefRs)|  
-+ Scaling | [youtube example](https://www.youtube.com/watch?v=FQGZobyvJm8)|  
++ [Scaling](scaling) - example of changing size or rectangular shape of a video | [youtube example](https://www.youtube.com/watch?v=FQGZobyvJm8)|  
 + Rotating | [youtube example](https://www.youtube.com/watch?v=e0smAVoafyM)|  
 + Mirror  | [youtube example](https://www.youtube.com/watch?v=ybfjG0xiuN8)|  
 + Drop frames | [youtube example](https://www.youtube.com/watch?v=Lxl1HM167qs)|  
