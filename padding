@@ -1,0 +1,22 @@
+# pad a video - see examples on youtube https://youtu.be/peGJZ1kK624
+
+# for these examples I am using a video that is 640x480 pixels
+
+# make a violet border padding around the whole video:
+ffmpeg -i input.MOV -vf pad=680:520:20:20:violet violetpad.MOV
+
+# padding that is twice the size of the video
+ffmpeg -i input.MOV -vf pad="2*iw:2*ih:ow-iw:oh-ih" doublepad.MOV
+
+# padding to make video 16:9 and centered
+ffmpeg -i input.MOV -vf pad="ih*16/9:ih:(ow-iw)/2:(oh-ih)/2" ratiopad.MOV
+
+# make a square video and center
+ffmpeg -i input.MOV -vf pad="max(iw\,ih):ow:(ow-iw)/2:(oh-ih)/2" squarepad.MOV
+
+# make a square video and add padding around the outside
+ffmpeg -i input.MOV -vf pad="3/2*iw:3/2*ih:(ow-iw)/2:(oh-ih)/2" 32pad.MOV
+
+
+
+# https://ffmpeg.org/ffmpeg-all.html#Examples-127
