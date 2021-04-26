@@ -1,0 +1,17 @@
+# Cutting a video up at regular time intervals
+# youtube video example https://youtu.be/sAl1lZMVr5A
+
+ffmpeg -i input.MOV -c copy -map 0 -segment_time 00:01:00​  -f segment -reset_timestamps 1 output_%03d.MOV
+
+# input.MOV is the video to be cut up
+# -c copy the stream is not to be re-encoded
+# -map 0 map all streams from the first input file to output
+# -segment_time 00:01:00​ cuts video at 1 minute intervals
+# -f segment force segment format
+# -reset_timestamps 1 optional to add this if only the first chunk is playable
+# output_%03d.MOV numbers the output videos in time order from 
+# begining to end using zero padding (using 3 digits and adding 0's 
+# to the front of the number if it is less than 100)
+
+# links: https://unix.stackexchange.com/questions/1670/how-can-i-use-ffmpeg-to-split-mpeg-video-into-10-minute-chunks
+# http://manpages.org/ffmpeg
