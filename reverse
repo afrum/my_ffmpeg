@@ -1,0 +1,28 @@
+# Reversing a video and multiple videos - youtube example https://youtu.be/3PfCwbNXAV0
+
+# Warning: This filter requires memory to buffer the entire clip, so trimming is suggested
+
+# I have a video on how to break a video up into smaller chunks
+# https://youtu.be/sAl1lZMVr5A​
+
+# Firstly the ffmpeg command to reverse a single file is 0:34​ :
+ffmpeg -i input.MOV -vf reverse reversed_output.MOV
+
+# -i input.MOV is the video that I want to reverse
+# -vf reverse creates the filtergraph specified by reverse and use it to filter the stream
+# reversed_output.MOV is the video that has been reversed
+
+# I have a bunch of videos numbered consecutively file 
+# input_000.MOV, input_001.MOV etc... up to input_012.MOV 
+# that I want to reverse. So I make a script 2:41​ :
+
+#! /bin/sh
+                                                                           
+for i in{000..012}                                                   
+do
+        ffmpeg -i input_$i.MOV -vf reverse output_$i.MOV
+done
+
+
+# links:https://video.stackexchange.com/questions/17738/how-to-use-ffmpeg-command-for-reverse-video
+# https://ffmpeg.org/ffmpeg-filters.html#Examples-97
