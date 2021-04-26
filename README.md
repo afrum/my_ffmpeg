@@ -6,7 +6,7 @@
 + [Color background](lavfi) - making a plain background and other lavfi examples| [youtube example](https://www.youtube.com/watch?v=ysMyZggmQfQ)|  
 ## Still images (logos, pictures, photos)  
 + [Scrolling](scrolling) - examples using a video or photo to scroll across | [youtube example](https://www.youtube.com/watch?v=OYOmvSDEUZ0)|  
-+ Logos | [youtube example](https://www.youtube.com/watch?v=SyFlTidTlOA&t=13s)|  
++ [Logos](logos) - examples of adding and removing logos | [youtube example](https://www.youtube.com/watch?v=SyFlTidTlOA&t=13s)|  
 + Combining photos | [youtube example](https://www.youtube.com/watch?v=8x3Nldwx7Hk)|  
 ## Editing a single Video  
 + Adjust Brightness | [youtube example](https://www.youtube.com/watch?v=el6njF-7fIA)|  
