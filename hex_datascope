@@ -1,0 +1,9 @@
+# here's a youtube example of the command https://youtu.be/aUg5u6PefRs
+
+ffmpeg -i original.MOV -vf "format=yuv444p,datascope=mode=color2" outputdatascope.MOV
+
+# this is a filter, not sure what its useful for. I changed the mode to color2, 
+# you could also try mode=color but the color isn't as bright. 
+# Saw this done by a couple other youtubers: https://youtu.be/tyYNY5gYY2o  https://youtu.be/iBVlcq7KoKg
+
+# the documentation for it is here: https://ffmpeg.org/ffmpeg-filters.html#datascope
