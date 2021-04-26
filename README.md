@@ -7,7 +7,7 @@
 ## Still images (logos, pictures, photos)  
 + [Scrolling](scrolling) - examples using a video or photo to scroll across | [youtube example](https://www.youtube.com/watch?v=OYOmvSDEUZ0)|  
 + [Logos](logos) - examples of adding and removing logos | [youtube example](https://www.youtube.com/watch?v=SyFlTidTlOA&t=13s)|  
-+ Combining photos | [youtube example](https://www.youtube.com/watch?v=8x3Nldwx7Hk)|  
++ [Combining photos](photo_slideshow) - command and comments to make a video slideshow from images | [youtube example](https://www.youtube.com/watch?v=8x3Nldwx7Hk)|  
 ## Editing a single Video  
 + Adjust Brightness | [youtube example](https://www.youtube.com/watch?v=el6njF-7fIA)|  
 + Adjust Saturation | [youtube example](https://www.youtube.com/watch?v=el6njF-7fIA)|  
