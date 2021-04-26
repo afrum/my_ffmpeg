@@ -5,12 +5,12 @@
 + [Drawing a grid](Draw%20grid%20lines) - examples to add gridlines to a video | [youtube example](https://www.youtube.com/watch?v=3ko598TeSjs)|  
 + [Color background](lavfi) - making a plain background and other lavfi examples| [youtube example](https://www.youtube.com/watch?v=ysMyZggmQfQ)|  
 ## Still images (logos, pictures, photos)  
-+ [Scrolling](scrolling) - examples using a video or photo to scroll across | [youtube example](https://www.youtube.com/watch?v=OYOmvSDEUZ0)|  
++ [Scrolling](scrolling) - examples scrolling across a video or photo | [youtube example](https://www.youtube.com/watch?v=OYOmvSDEUZ0)|  
 + [Logos](logos) - examples of adding and removing logos | [youtube example](https://www.youtube.com/watch?v=SyFlTidTlOA&t=13s)|  
 + [Combining photos](photo_slideshow) - command and comments to make a video slideshow from images | [youtube example](https://www.youtube.com/watch?v=8x3Nldwx7Hk)|  
 ## Editing a single Video  
-+ Adjust Brightness | [youtube example](https://www.youtube.com/watch?v=el6njF-7fIA)|  
-+ Adjust Saturation | [youtube example](https://www.youtube.com/watch?v=el6njF-7fIA)|  
++ [Adjust Brightness](brightness_and_saturation) - example command that adjusts brightness with comments | [youtube example](https://www.youtube.com/watch?v=el6njF-7fIA)|  
++ [Adjust Saturation](brightness_and_saturation)  - example command that adjusts saturation with comments| [youtube example](https://www.youtube.com/watch?v=el6njF-7fIA)|  
 + Lag effect (trippy) | [youtube example](https://www.youtube.com/watch?v=-IECY9t-7xA)|  
 + Hex values | [youtube example](https://www.youtube.com/watch?v=aUg5u6PefRs)|  
 + Scaling | [youtube example](https://www.youtube.com/watch?v=FQGZobyvJm8)|  
