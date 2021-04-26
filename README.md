@@ -18,7 +18,7 @@
 + [Mirror](mirror) - example to mirror the left half onto the right half  | [youtube example](https://www.youtube.com/watch?v=ybfjG0xiuN8)|  
 + [Drop frames](deflicker) - removing every other frame to remove flicker | [youtube example](https://www.youtube.com/watch?v=Lxl1HM167qs)|  
 + [Cut](segmenting) - making multiple videos by cutting one video into even time segments  | [youtube example](https://www.youtube.com/watch?v=sAl1lZMVr5A)|  
-+ Padding | [youtube example](https://www.youtube.com/watch?v=peGJZ1kK624)|  
++ [Padding](padding) - add padding around a video | [youtube example](https://www.youtube.com/watch?v=peGJZ1kK624)|  
 + Error | [youtube example](https://www.youtube.com/watch?v=55O9c169Zc4)|  
 + Fade | [youtube example](https://www.youtube.com/watch?v=Lxl1HM167qs)|  
 + Reverse | [youtube example](https://www.youtube.com/watch?v=3PfCwbNXAV0)|  
