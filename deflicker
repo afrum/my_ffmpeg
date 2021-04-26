@@ -1,0 +1,24 @@
+# removing flickering by removing every other frame.
+# example video link https://youtu.be/Lxl1HM167qs
+# there are multiple steps
+
+# Step 1 - to change the format of the video file:
+ffmpeg -i input.MOV -an -vcodec rawvideo -pix_fmt yuv420p rawbitstream.yuv
+
+# Step 2 - drops all the even frames from the file:
+ffmpeg -r 2 -s WxH -i rawbitstream.yuv -filter:v select="mod(n-1\,2)" -c:v rawvideo -r 1 -format rawvideo -pix_fmt yuv420p -an odd.yuv
+
+# Step 3 - drops all the odd frames from the file:
+ffmpeg -r 2 -s WxH -i rawbitstream.yuv -filter:v select="not(mod(n-1\,2))" -c:v rawvideo -r 1 -format rawvideo -pix_fmt yuv420p -an even.yuv
+
+# Step 4 - converts the files to .MOV files:
+ffmpeg -s 1920x1080 -i even.yuv even.MOV
+ffmpeg -s 1920x1080 -i odd.yuv odd.MOV
+
+# Step 5 - is to slow the video down
+# because after we dropped every other frame it made the video speed up.:
+ffmpeg -i even.MOV -vf "setpts=1.67*PTS" Slowed-even.MOV
+ffmpeg -i odd.MOV -vf "setpts=1.67*PTS" Slowed-odd.MOV
+
+# Link: https://superuser.com/questions/573747/drop-every-even-or-odd-frames-using-ffmpeg
+
