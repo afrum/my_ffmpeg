@@ -1,0 +1,25 @@
+# Fading a  video - youtube example https://youtu.be/5uUkBh3qUGc
+
+# https://ffmpeg.org/ffmpeg-all.html#fade​
+# https://ffmpeg.org/ffmpeg-all.html#afade​
+
+# fading in video over time
+ffmpeg -i input.MOV -vf fade=in:start_time=0:duration=2 fadeindog.MOV
+
+# fading in video by frames
+ffmpeg -i input.MOV -vf fade=in:start_frame=0:nb_frames=30 fadeinframesdog.MOV
+
+# fading in and fading out
+ffmpeg -i input.MOV -vf fade=in:start_time=0:duration=2,fade=out:st=3:d=1 fadeinoutdog.MOV
+
+# fading in, background is yellow
+ffmpeg -i input.MOV -vf fade=in:start_time=0:duration=2:color=yellow fadeinyellowdog.MOV
+
+# fade in audio
+ffmpeg -i input.MOV -af afade=t=in:start_time=0:duration=2 audiofadeinydog.MOV
+
+# when I combined these video's I had problems concatenating it and
+# ended up using the overlay command. But then I had problems with
+# the audio which I may do a video about in the future so I actually
+# ended up adding the audio for the audio video. I got the solution
+# from the link: https://stackoverflow.com/questions/32949824/ffmpeg-mix-audio-at-specific-time
