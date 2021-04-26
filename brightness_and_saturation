@@ -1,0 +1,17 @@
+# Adjusting brightness video example https://youtu.be/el6njF-7fIA
+
+ffmpeg -i input.MOV -vf eq=brightness=0.06:saturation=2 -c:a copy output.MOV
+
+# The command above adjusts the brightness and saturation. 
+# The video on the left is the original and the right is the adjusted video. 
+# I got this command from here: https://video.stackexchange.com/questions/20962/ffmpeg-color-correction-gamma-brightness-and-saturation
+
+ffmpeg -i left.MOV -i right.MOV -filter_complex hstack output.MOV
+# The command above puts 2 videos side by side, I have used this in a previous video for more decription
+
+convert  -background none -fill white -font Droid-Sans -pointsize 48 label:'insert text here' Text.gif
+# The command above is to make a title, this was used in a previous video I did about making titles using ffmpeg. You can see more description in that video. The command below is to add the title to the video.
+
+ffmpeg -i input.MOV -i Text.gif -filter_complex "[0:v][1:v] overlay=25:25:enable='between(t,0,20)'" -pix_fmt yuv420p -c:a copy titledoutput.MOV
+
+
