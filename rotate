@@ -1,0 +1,21 @@
+# rotate examples you can see visually in this video https://youtu.be/e0smAVoafyM
+
+# reflect along the x axis and rotate clockwise 90 degrees:
+ffmpeg -i input.MOV -vf "transpose=0" transpose0.MOV
+
+# rotate 90 degrees clockwise
+ffmpeg -i input.MOV -vf "transpose=1" transpose1.MOV
+
+# rotate 90 degrees counter-clockwise
+ffmpeg -i input.MOV -vf "transpose=2" transpose2.MOV
+
+# reflect along the y axis and rotate 90 degrees clockwise
+ffmpeg -i input.MOV -vf "transpose=3" transpose3.MOV
+
+# reflect along the x axis
+ffmpeg -i input.MOV -vf "vflip" verticalflip.MOV
+
+# reflect along the y axis
+ffmpeg -i input.MOV -vf "hflip" horizontalflip.MOV
+
+
