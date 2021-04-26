@@ -1,0 +1,14 @@
+# adding still images together in a slideshow video my example video https://www.youtube.com/watch?v=8x3Nldwx7Hk
+
+cat *.JPG | ffmpeg -framerate 3 -f image2pipe -i - output.MOV
+
+
+
+# cat * .JPG = this command collected all the files I had in the folder that ended with .JPG, 
+# so if your files end with a different suffix use that.
+# then it was piped thru to ffmpeg.
+# the framerate  of 3, I believe stands for 3 frames per second
+# image2pipe option is for handling all the images collected.
+# make sure that you  put a space between "-" and "output.MOV" because the "-" is supposed to be sitting by itself. 
+# it's referring to the input for the video is from the images that have been piped in.
+# I have made an output.MOV because my other files are .MOV but you can choose what you want.
