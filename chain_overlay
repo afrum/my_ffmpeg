@@ -1,0 +1,19 @@
+# Overlay split one video into 4 and alter each - here is the youtube example https://youtu.be/bsRJNnymTxg
+# I got example from this link https://ffmpeg.org/ffmpeg-all.html#Examples-126
+
+# the command is:
+
+ffmpeg -filter_complex "nullsrc=s=200x200 [bg]; \
+testsrc=s=100x100, split=4 [in0][in1][in2][in3];\
+[in0] lutrgb=r=0, [bg]   overlay=0:0     [mid0];\
+[in1] lutrgb=g=0, [mid0] overlay=100:0   [mid1];\
+[in2] lutrgb=b=0, [mid1] overlay=0:100   [mid2];\
+[in3] null,       [mid2] overlay=100:100" -t 10 output10.MOV
+
+# nullsrc=s=200x200 is a source for filter which ignores input data. It's size is 200x200 pixels.
+# testsrc is a test video pattern
+# split=4 splits the testsrc into 4 streams
+# lutrgb look up table for red green blue colors
+# overlay=100:0 the top left corner of the overlay video is set 100 pixels accross 0 down
+# -t 10 the output video will be 10 seconds long
+# output10.MOV is the finished product
