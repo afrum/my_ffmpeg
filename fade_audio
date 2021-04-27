@@ -1,0 +1,4 @@
+# here is a command for fading audio in shown at the end of my youtube video https://youtu.be/5uUkBh3qUGc
+
+# here is the command:
+fmpeg -i input.MOV -af afade=t=in:start_time=0:duration=2 audiofadein.MOV
