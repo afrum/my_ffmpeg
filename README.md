@@ -34,4 +34,4 @@
 + [Cross fade](crossfade) - fading 2 videos together | [youtube example](https://www.youtube.com/watch?v=hJH2tJTK8Kc)|  
 ## Audio  
 + [Add Audio](add_audio) - adding audio to a video | [youtube example](https://www.youtube.com/watch?v=BYEdEUCT7NI)|  
-+ Fade Audio | [youtube example](https://www.youtube.com/watch?v=Lxl1HM167qs)|
++ [Fade Audio](fade_audio) - fading in audio | [youtube example](https://youtu.be/5uUkBh3qUGc)|
