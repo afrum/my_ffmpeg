@@ -24,7 +24,7 @@
 + [Reverse](reverse) - making one or many videos in reverse | [youtube example](https://www.youtube.com/watch?v=3PfCwbNXAV0)|  
 ## Editing Multiple videos    
 + [Mozaic](mozaic) - example of 4 videos being played at once | [youtube example](https://www.youtube.com/watch?v=mfUDKNRMBRY)|  
-+ Side by Side | [youtube example](https://www.youtube.com/watch?v=0Bv6FDD94M0)|  
++ [Side by Side](side_by_side) - 1 video split in 2 and sat side by side, 1 video sliding over another, 2 different videos sitting side by side | [youtube example](https://www.youtube.com/watch?v=0Bv6FDD94M0)|  
 + Side by Side | [youtube example](https://www.youtube.com/watch?v=B0tNDgHJ_no)|  
 + Different video types | [youtube example](https://www.youtube.com/watch?v=_2Gsh1gFJBY)|  
 + Blend | [youtube example](https://www.youtube.com/watch?v=aUg5u6PefRs)|  
