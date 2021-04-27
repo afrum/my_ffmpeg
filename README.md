@@ -28,7 +28,7 @@
 + [Side by Side](hstack_side_by_side) - sit videos side by side by using hstack option in the command | [youtube example](https://www.youtube.com/watch?v=B0tNDgHJ_no)|  
 + [Concatenate](concatenate) - combine videos 1 after the other | [youtube example](https://www.youtube.com/watch?v=YpM2Dlhx2zk)|  
 + [Different video types](concat_diff_fps) - combine videos of different file types one after the other | [youtube example](https://www.youtube.com/watch?v=_2Gsh1gFJBY)|  
-+ Blend | [youtube example](https://www.youtube.com/watch?v=aUg5u6PefRs)|  
++ [Blend](Blend) - example commands for blending 2 videos | [youtube example](https://www.youtube.com/watch?v=aUg5u6PefRs)|  
 + Overlay | [youtube example](https://www.youtube.com/watch?v=i-yWKUVENqg)|  
 + Overlay | [youtube example](https://www.youtube.com/watch?v=bsRJNnymTxg)|  
 + Cross fade | [youtube example](https://www.youtube.com/watch?v=hJH2tJTK8Kc)|  
