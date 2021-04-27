@@ -1,0 +1,22 @@
+# add audio - youtube example https://youtu.be/BYEdEUCT7NI
+# I used the following commands:
+
+ffmpeg -i video.MOV
+ffmpeg -i video.MOV -c:a libmp3lame -q:a 4 output-sound.mp3
+
+# I used this guys video where he explains it https://youtu.be/SaJK8bZs0bw
+
+# Then I opened audacity for the first time. At first I couldn't hear any sound, checked the audacity manual for setting up Audacity.
+# It suggested to select Edit then Preferences. I saw that the playback was set to default. I selected Pulse because I have pulse audio installed. And then it started working.
+
+
+# I combined the video with new audio with the command below:
+
+ffmpeg -i newsound.mp3 -i video.MOV -map 0:0 -map 1:0 -acodec copy -vcodec copy -shortest output.MOV
+
+# I got this command from the link below:
+# https://forum.videohelp.com/threads/359206-How-to-replace-the-audio-in-a-MOV-file-without-converting-the-video
+# , but the link that "Baldrick" gave for the manual was broken unfortunately.
+# So it doesn't completely get rid of noise but it does reduce it a lot so that you can hear the other birds. 
+# Ideally I need to look into something that will muffle the noise. 
+# I assume that it is the wind blowing but perhaps I am inadvertently doing something to affect the audio.
