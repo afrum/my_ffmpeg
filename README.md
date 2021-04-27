@@ -24,13 +24,13 @@
 + [Reverse](reverse) - making one or many videos in reverse | [youtube example](https://www.youtube.com/watch?v=3PfCwbNXAV0)|  
 ## Editing Multiple videos    
 + [Mozaic](mozaic) - example of 4 videos being played at once | [youtube example](https://www.youtube.com/watch?v=mfUDKNRMBRY)|  
-+ [Side by Side](side_by_side) - 1 video split in 2 and sat side by side, 1 video sliding over another, 2 different videos sitting side by side | [youtube example](https://www.youtube.com/watch?v=0Bv6FDD94M0)|  
-+ Side by Side | [youtube example](https://www.youtube.com/watch?v=B0tNDgHJ_no)|  
-+ Different video types | [youtube example](https://www.youtube.com/watch?v=_2Gsh1gFJBY)|  
++ [Side by Side](side_by_side) - 1 video split in 2 side by side, 1 sliding over another, 2 different videos side by side | [youtube example](https://www.youtube.com/watch?v=0Bv6FDD94M0)|  
++ [Side by Side](hstack_side_by_side) - sit videos side by side by using hstack option in the command | [youtube example](https://www.youtube.com/watch?v=B0tNDgHJ_no)|  
++ [Concatenate](concatenate) - combine videos 1 after the other | [youtube example](https://www.youtube.com/watch?v=YpM2Dlhx2zk)|  
++ [Different video types](concat_diff_fps) - combine videos of different file types one after the other | [youtube example](https://www.youtube.com/watch?v=_2Gsh1gFJBY)|  
 + Blend | [youtube example](https://www.youtube.com/watch?v=aUg5u6PefRs)|  
 + Overlay | [youtube example](https://www.youtube.com/watch?v=i-yWKUVENqg)|  
 + Overlay | [youtube example](https://www.youtube.com/watch?v=bsRJNnymTxg)|  
-+ Concatenate | [youtube example](https://www.youtube.com/watch?v=YpM2Dlhx2zk)|  
 + Cross fade | [youtube example](https://www.youtube.com/watch?v=hJH2tJTK8Kc)|  
 ## Audio  
 + Add Audio | [youtube example](https://www.youtube.com/watch?v=BYEdEUCT7NI)|  
