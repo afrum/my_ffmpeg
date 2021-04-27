@@ -29,8 +29,8 @@
 + [Concatenate](concatenate) - combine videos 1 after the other | [youtube example](https://www.youtube.com/watch?v=YpM2Dlhx2zk)|  
 + [Different video types](concat_diff_fps) - combine videos of different file types one after the other | [youtube example](https://www.youtube.com/watch?v=_2Gsh1gFJBY)|  
 + [Blend](Blend) - example commands for blending 2 videos | old [youtube e.g.1](https://youtu.be/yrUGUrYfccY) new [youtube e.g.2](https://youtu.be/2CT7h9i2Eqk)|  
-+ [Overlay](overlay) - different examples of overlay commands| [youtube example](https://www.youtube.com/watch?v=i-yWKUVENqg)|  
-+ Overlay | [youtube example](https://www.youtube.com/watch?v=bsRJNnymTxg)|  
++ [Overlay](overlay) - different examples of overlay commands | [youtube example](https://www.youtube.com/watch?v=i-yWKUVENqg)|  
++ [Overlay](chain_overlay) - chain several overlay in cascade | [youtube example](https://www.youtube.com/watch?v=bsRJNnymTxg)|  
 + Cross fade | [youtube example](https://www.youtube.com/watch?v=hJH2tJTK8Kc)|  
 ## Audio  
 + Add Audio | [youtube example](https://www.youtube.com/watch?v=BYEdEUCT7NI)|  
