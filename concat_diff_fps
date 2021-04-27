@@ -1,0 +1,9 @@
+# concatenating 2 different videos - one after the other - youtube example https://youtu.be/_2Gsh1gFJBY
+
+ffmpeg -i 1.MOV -i 2.MOV -filter_complex "[0:v:0][0:a:0][1:v:0][1:a:0]concat=n=2:v=1:a=1[outv][outa]" -map "[outv]" -map "[outa]"  output.MOV
+
+# I had to combine using this method rather than the method I usually use, because even though the files were both .MOV they had different fps and other things which made the second video speed up when concatenated with the first video. Apparently you can use this command to combine all sorts of different video file types together. 
+# heres the link to the info I found: https://trac.ffmpeg.org/wiki/Concatenate
+# For some reason I was unable to add text to the 2nd half of the video. I will look into what I might be doing wrong there.
+# link to concatenate if they are the same video types https://github.com/afrum/my_ffmpeg/blob/main/concatenate
+# another option is to change both video file types so they are the same https://github.com/afrum/my_ffmpeg/blob/main/timebase_error
