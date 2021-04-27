@@ -1,0 +1,10 @@
+# Sitting 2 videos side by side using hstack - youtube example https://youtu.be/B0tNDgHJ_no
+
+ffmpeg -i left.mp4 -i right.mp4 -filter_complex hstack output.mp4
+
+# just found the command above from a comment here https://unix.stackexchange.com/questions/233832/merge-two-video-clips-into-one-placing-them-next-to-each-other
+# I think this could come in handy sometime. I tried to get it working on 2 videos with different sizes and other things, 
+# but there was a whole bunch of errors. But if you are using 2 videos with same formats and size it works fine. 
+# Even if 1 video is of shorter length than the other. You can see the one on the right is shorter than the one on the left 
+# and so it just keeps the last frame while the other video keeps going. 
+# I'm not sure what is happening with the sound because both videos have similar background noise.
