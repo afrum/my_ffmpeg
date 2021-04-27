@@ -1,0 +1,18 @@
+# fading 2 videos into each other - youtube example https://youtu.be/hJH2tJTK8Kc
+# I got this from this link: https://ffmpeg.org/ffmpeg-filters.html#Examples-121
+
+# fading 2 videos together:
+ffmpeg -i 1.MOV -i 2.MOV -filter_complex xfade=transition=fade:duration=2:offset=5 output.MOV
+
+# video wipes up:
+ffmpeg -i 1.MOV -i 2.MOV -filter_complex xfade=transition=wipeup:duration=2:offset=3 output.MOV
+
+# video transitions from the center:
+ffmpeg -i 1.MOV -i 2.MOV -filter_complex xfade=transition=circleclose:duration=2:offset=3 output.MOV
+
+# this command crashed when I first ran it, I cut the video up into 10 second chunks and it worked fine.
+# my other video on how to do that https://youtu.be/sAl1lZMVr5A
+# when I tried to concatenate the videos as I have done previously it came up with an error: Non-monotonous DTS in output stream 0:0
+# After a few different attempts I decided to use the overlay command which I have shown an example at 2:00
+# And heres a link to the documentaion on overlay: https://ffmpeg.org/ffmpeg-all.html#Commands-58
+# link to xfade: https://ffmpeg.org/ffmpeg-all.html#Examples-159
