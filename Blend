@@ -1,0 +1,24 @@
+# blend videos old https://youtu.be/yrUGUrYfccY new https://youtu.be/2CT7h9i2Eqk
+# the videos go through all 33 options for you to see the output. For the examples below I've just used the addition option
+
+# These videos use the blend command and you can see what the effect looks like, the new video
+# I made thanks to the help of a comment I got from Astroni800 to get better results
+
+# OLD video commands
+# command example:
+ffmpeg -i video.MOV -i imager.png -filter_complex blend=all_mode=addition addition.MOV
+
+# this command runs but for better results you need the same gbrp color formats (see comment below)
+# you can also use 2 videos as the inputs. 
+
+# If you do tblend the t stands for time, and when I tried it, it only worked for 1 video as the input 
+# and I only had 1 input. Here is an example of a tblend command:
+ffmpeg -i output.MOV -filter_complex tblend=vividlight vivid.MOV
+
+# NEW video commands
+# Thanks Astroni800
+
+# heres the comment he gave:
+# Try to convert both streams to gbrp color format, like:
+
+ffmpeg -i video.MOV -i imager.png -filter_complex "[0:v]format=gbrp[f0],[1:v]format=gbrp[f1],[f0][f1]blend=all_mode=addition" addition.MOV
