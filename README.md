@@ -33,5 +33,5 @@
 + [Overlay](chain_overlay) - chain several overlay in cascade | [youtube example](https://www.youtube.com/watch?v=bsRJNnymTxg)|  
 + [Cross fade](crossfade) - fading 2 videos together | [youtube example](https://www.youtube.com/watch?v=hJH2tJTK8Kc)|  
 ## Audio  
-+ Add Audio | [youtube example](https://www.youtube.com/watch?v=BYEdEUCT7NI)|  
++ [Add Audio](add_audio) - adding audio to a video | [youtube example](https://www.youtube.com/watch?v=BYEdEUCT7NI)|  
 + Fade Audio | [youtube example](https://www.youtube.com/watch?v=Lxl1HM167qs)|
