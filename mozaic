@@ -1,0 +1,30 @@
+# Mozaic - example video https://youtu.be/mfUDKNRMBRY
+# below is the command that I used:
+
+ffmpeg -i topleft.MOV -i topright.MOV \
+-i bottomleft.MOV -i bottomright.MOV -filter_complex "\
+  nullsrc=size=640x480 [base];\
+  [base] overlay=shortest=1 [tmp1];\
+  [tmp1] overlay=shortest=1:x=320 [tmp2];\
+  [tmp2] overlay=shortest=1:y=240 [tmp3];\
+  [tmp3] overlay=shortest=1:x=320:y=240"\
+ -c:v libx264 output.MOV
+
+# -i topleft.MOV -i topright.MOV -i bottomleft.MOV -i bottomright.MOV  are the input videos
+# nullsrc=size=640x480 is the base. It's size is 640x480 pixels.
+# [base] overlay=shortest=1 [tmp1] The topleft.MOV video is overlayed The output is named tmp1 and is as long as the shortest input video, and sent to the next step 
+# [tmp1] overlay=shortest=1:x=320 [tmp2]  topright.MOV is layered over tmp1 but topright.MOV is positioned to the right along the x-axis 320 pixels and named tmp2
+# [tmp2]overlay=shortest=1:y=240 [tmp3]  bottomleft.MOV is layered over tmp2, but bottomleft.MOV is moved down the y axis 240 pixels
+# [tmp3] overlay=shortest=1:x=320:y=240 bottomright.MOV is layered over tmp3 but is moved right 320 pixels and down 240 pixels. 
+# -c:v lib264 encodes all video streams with libx264
+# output.MOV is the final product
+#  nullsrc determines the size of the output video
+
+
+# The only area that will be in the output video is the 640x480 
+# My input videos were 1920x1080 so you can only see the top left hand corner of each of them.
+# There are different ways to deal with this.
+#  -you could make the base nullsrc area bigger
+#  -or you could scale the input videos. (I have a video on how to scale videos)
+#  -there is another option which I will show in a future video.
+# There is plenty of documentation out there as well. link: https://ffmpeg.org/ffmpeg-all.html#Examples-126
