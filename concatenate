@@ -1,0 +1,20 @@
+# concatenate videos together one after the other - youtube example https://youtu.be/YpM2Dlhx2zk
+# making one long video by combining a bunch of videos of the same type. If the videos are all the same then this should work. 
+
+# I learnt how to from the link below: https://trac.ffmpeg.org/wiki/Concatenate
+# first you need to make a text file with a list list of files to combine
+
+printf "file '%s'\n" ./*.MOV > mylist.txt
+
+# I have .MOV files so I wrote ./*.MOV but if I had .mkv files then change to ./*.mkv etc...
+# then the command to combine the files in the text file we created is
+
+ffmpeg -f concat -safe 0 -i mylist.txt -c copy output.MOV
+
+# ffmpeg -f concat (now we use ffmpeg and specifying concatenation format)
+# -safe 0 (I don't know what this is, the wiki says "not required if the paths are relative")
+# -i mylist.txt (uses all the videos named in the text document called mylist.txt)
+# -c copy (is to copy all videos to the output video)
+# output.MOV (is the video with all the video files combined)
+
+# I have another on how to combine video's of different types that might work if this doesn't try https://youtu.be/_2Gsh1gFJBY
