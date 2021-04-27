@@ -23,7 +23,7 @@
 + [Fade](fading) - in and out video and audio | [youtube example](https://youtu.be/5uUkBh3qUGc)|  
 + [Reverse](reverse) - making one or many videos in reverse | [youtube example](https://www.youtube.com/watch?v=3PfCwbNXAV0)|  
 ## Editing Multiple videos    
-+ Mozaic | [youtube example](https://www.youtube.com/watch?v=mfUDKNRMBRY)|  
++ [Mozaic](mozaic) - example of 4 videos being played at once | [youtube example](https://www.youtube.com/watch?v=mfUDKNRMBRY)|  
 + Side by Side | [youtube example](https://www.youtube.com/watch?v=0Bv6FDD94M0)|  
 + Side by Side | [youtube example](https://www.youtube.com/watch?v=B0tNDgHJ_no)|  
 + Different video types | [youtube example](https://www.youtube.com/watch?v=_2Gsh1gFJBY)|  
