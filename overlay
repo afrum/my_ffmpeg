@@ -1,0 +1,85 @@
+# overlay multiple videos - youtube example https://youtu.be/i-yWKUVENqg
+# the characters I used are not real people for more information see https://thispersondoesnotexist.com/
+# I used wav2lip for the lip syncing which I show in my previous video https://youtu.be/iQeWwd-LnLs
+
+# here are the commands I used:
+
+ffmpeg -i topleft.mkv -i topright.mkv -i bottomleft.mkv -i bottomright.mkv -filter_complex "\
+  nullsrc=size=640x640 [base];\
+  [0:v] setpts=PTS-STARTPTS, scale=320x320 [upperleft];\
+  [1:v] setpts=PTS-STARTPTS, scale=320x320 [upperright];\
+  [2:v] setpts=PTS-STARTPTS, scale=320x320 [lowerleft];\
+  [3:v] setpts=PTS-STARTPTS, scale=320x320 [lowerright];\
+  [base][upperleft] overlay=shortest=1 [tmp1];\
+  [tmp1][upperright] overlay=shortest=1:x=320 [tmp2];\
+  [tmp2][lowerleft] overlay=shortest=1:y=320 [tmp3];\
+  [tmp3][lowerright] overlay=shortest=1:x=320:y=320"\
+ -c:v libx264 output.mkv
+
+ffmpeg -i topleft.mkv -i topright.mkv -i bottomleft.mkv -i bottomright.mkv -filter_complex "\
+  nullsrc=size=640x480 [base];\
+  [0:v] setpts=PTS-STARTPTS, scale=320x240 [upperleft];\
+  [1:v] setpts=PTS-STARTPTS, scale=320x240 [upperright];\
+  [2:v] setpts=PTS-STARTPTS, scale=320x240 [lowerleft];\
+  [3:v] setpts=PTS-STARTPTS, scale=320x240 [lowerright];\
+  [base][upperleft] overlay=shortest=1 [tmp1];\
+  [tmp1][upperright] overlay=shortest=1:x=320 [tmp2];\
+  [tmp2][lowerleft] overlay=shortest=1:y=240 [tmp3];\
+  [tmp3][lowerright] overlay=enable='gte(t,2)':x=320:y=240"\
+ -c:v libx264 output_with_delay.mkv
+
+ffmpeg -i topleft.mkv -i topright.mkv -i bottomleft.mkv -i bottomright.mkv -filter_complex "\
+  nullsrc=size=640x480 [base];\
+  [0:v] setpts=PTS-STARTPTS, scale=320x240 [upperleft];\
+  [1:v] setpts=PTS-STARTPTS, scale=320x240 [upperright];\
+  [2:v] setpts=PTS-STARTPTS, scale=320x240 [lowerleft];\
+  [3:v] setpts=PTS-STARTPTS, scale=320x240 [lowerright];\
+  [base][upperleft] overlay=shortest=1 [tmp1];\
+  [tmp1][upperright] overlay=shortest=1:x=320 [tmp2];\
+  [tmp2][lowerleft] overlay=shortest=1:y=240 [tmp3];\
+  [tmp3][lowerright] overlay=enable='lte(t,3)':x=320:y=240"\
+ -c:v libx264 output_with_early_finish.mkv
+
+ffmpeg -i topleft.mkv -i topright.mkv -i bottomleft.mkv -i bottomright.mkv -filter_complex "\
+  nullsrc=size=640x480 [base];\
+  [0:v] setpts=PTS-STARTPTS, scale=320x240 [upperleft];\
+  [1:v] setpts=PTS-STARTPTS, scale=320x240 [upperright];\
+  [2:v] setpts=PTS-STARTPTS, scale=320x240 [lowerleft];\
+  [3:v] setpts=PTS-STARTPTS, scale=320x240 [lowerright];\
+  [base][upperleft] overlay=shortest=1 [tmp1];\
+  [tmp1][upperright] overlay=shortest=1:x=320 [tmp2];\
+  [tmp2][lowerleft] overlay=shortest=1:y=240 [tmp3];\
+  [tmp3][lowerright] overlay=enable='between(t,2,4)':x=320:y=240"\
+ -c:v libx264 output_with_set_time.mkv
+
+ffmpeg -i topleft.mkv -i topright.mkv -i bottomleft.mkv -i bottomright.mkv -filter_complex "\
+  nullsrc=size=640x480 [base];\
+  [0:v] setpts=PTS-STARTPTS, scale=320x240 [upperleft];\
+  [1:v] setpts=PTS-STARTPTS, scale=320x240 [upperright];\
+  [2:v] setpts=PTS-STARTPTS, scale=320x240 [lowerleft];\
+  [3:v] setpts=PTS+2/TB, scale=320x240 [lowerright];\
+  [base][upperleft] overlay=shortest=1 [tmp1];\
+  [tmp1][upperright] overlay=shortest=1:x=320 [tmp2];\
+  [tmp2][lowerleft] overlay=enable='between(t,2,4)':y=240 [tmp3];\
+  [tmp3][lowerright] overlay=enable='between(t,2,4)':x=320:y=240"\
+ -c:v libx264 output_with_set_times.mkv
+
+ffmpeg -i background.mkv -i leftperson.mkv -i rightperson.mkv -filter_complex "\
+  nullsrc=size=1920x1080 [base];\
+  [0:v] setpts=PTS-STARTPTS, scale=1920x1080 [background];\
+  [1:v] setpts=PTS-STARTPTS, scale=600x600 [left];\
+  [2:v] setpts=PTS-STARTPTS, scale=600x600 [right];\
+  [base][background] overlay=shortest=1 [tmp1];\
+  [tmp1][left] overlay=shortest=1:x=100:y=200 [tmp2];\
+  [tmp2][right] overlay=enable='between(t,2,6)':x=1010:y=200"\
+ -c:v libx264 output_two_people.mkv
+
+ffmpeg -i background.mkv -i leftperson.mkv -i rightperson.mkv -filter_complex "\
+  nullsrc=size=1920x1080 [base];\
+  [0:v] setpts=PTS-STARTPTS, scale=1920x1080 [background];\
+  [1:v] setpts=PTS+2/TB, scale=600x600 [left];\
+  [2:v] setpts=PTS-STARTPTS, scale=600x600 [right];\
+  [base][background] overlay=shortest=1 [tmp1];\
+  [tmp1][left] overlay=shortest=1:x=100:y=200 [tmp2];\
+  [tmp2][right] overlay=shortest=1:x=1010:y=200"\
+ -c:v libx264 output_two_people_PTS2.mkv
