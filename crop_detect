@@ -1,0 +1,11 @@
+#Crop a video to remove black padding - youtube example https://youtu.be/BjPQ3-cLUSo
+
+# Step 1: use ffplay command below and look at the output in the terminal 
+
+ffplay -i input.mkv -vf cropdetect
+
+# this will give you different options of where it thinks the border is over the time of the video. You can see the output in the terminal.
+
+# then you can use the information to crop your video here's an example, I picked the coordinates I thought best fit from the many given:
+
+ffmpeg -i input.mkv -vf crop=960:960:480:60 output.mkv
