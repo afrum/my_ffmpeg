@@ -1,0 +1,23 @@
+
+# changing the perspective of a video 
+# (Stretching or squashing a video based on a quadrilateral shape you define to give the appearance of perspective)
+
+# if you imagine plotting 4 sets of x,y coordinates on a video and drawing lines from one corner to the other to make a quadrilateral shape
+# and then you stretch the area of this quadrilateral shape to fit the shape of the original video that is what this command does. 
+
+ffmpeg -i input.MOV -vf "perspective=0:0:W:400:0:H:W:H-400" perspective0.MOV
+
+# this first command selects a quadralateral shape the first 2 coordinates x0 and y0 which is shown as 0:0
+# 0 for x0 coordinate means that the upper left corner moves to the right 0 pixels (it doesn't move that point)
+# 0 for y0 coordinate means that the upper left corner moves down 0 pixels (it also doesn't move)
+# W:400 represents the top righ corner coordinates x1:y1
+# W for x1 coordinate means the coordinate for the top right corner is the same number of pixels accross as the width of the video
+# 400 for y1 coordinate means the coordinate for the top right corner is moved down 400 pixels
+# 0:H are the coordinates for the bottom left corner x2:y2 (H represents height in pixels of the video)
+# W:H-400 are the coordinates for the bottom right corner x3:y3
+
+
+# If you want the original image squashed to fit into the quadrilateral shape then you add the sense=destination option
+ffmpeg -i input.MOV -vf "perspective=eval=0:0:W:400:0:H:W:H-400:sense=destination" perspective1.MOV
+
+
