@@ -21,3 +21,15 @@ ffmpeg -i input.MOV -vf "perspective=0:0:W:400:0:H:W:H-400" perspective0.MOV
 ffmpeg -i input.MOV -vf "perspective=eval=0:0:W:400:0:H:W:H-400:sense=destination" perspective1.MOV
 
 
+# if you want a plain surrounding of the new perspective you need to add some type of border to the video
+# either by using padd or datagrid or any other command that works for you
+# first you will need the dimensions. To get just the dimentions I used this command
+# that I found at this link https://stackoverflow.com/questions/7362130/getting-video-dimension-resolution-width-x-height-from-ffmpeg
+
+ffprobe -v error -show_entries stream=width,height -of csv=p=0:s=x input.m4v
+
+# now that we know the dimensions we can do the drawgrid and perspective command together
+# my dimensions were 1920x1989
+
+ffmpeg -i input.MOV -vf drawgrid=1915:1075:t=6,perspective=200:200:W-200:200:0:H:W:H:sense=destination perspective2.MOV
+
