@@ -29,7 +29,7 @@ ffmpeg -i input.MOV -vf "perspective=eval=0:0:W:400:0:H:W:H-400:sense=destinatio
 ffprobe -v error -show_entries stream=width,height -of csv=p=0:s=x input.m4v
 
 # now that we know the dimensions we can do the drawgrid and perspective command together
-# my dimensions were 1920x1989
+# my dimensions were 1920x1989, also notice that the thickness of the grid is 1 pixels larger than the area otherwise it doesn't work
 
 ffmpeg -i input.MOV -vf drawgrid=1915:1075:t=6,perspective=200:200:W-200:200:0:H:W:H:sense=destination perspective2.MOV
 
