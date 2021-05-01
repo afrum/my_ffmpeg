@@ -22,9 +22,12 @@ ffmpeg -i input.MOV -vf "perspective=eval=0:0:W:400:0:H:W:H-400:sense=destinatio
 
 
 # if you want a plain surrounding of the new perspective you need to add some type of border to the video
-# either by using padd or datagrid or any other command that works for you
-# first you will need the dimensions. To get just the dimentions I used this command
-# that I found at this link https://stackoverflow.com/questions/7362130/getting-video-dimension-resolution-width-x-height-from-ffmpeg
+# either by using pad or datagrid or drawbox any other command that works for you
+
+ffmpeg -i input.MOV -vf drawbox,perspective=200:200:W-200:200:0:H:W:H:sense=destination perspective2.MOV
+
+# for drawbox you don't need to figure out the video's dimensions but for pad and datagrid you can use this command
+# to get dimensions I found at this link https://stackoverflow.com/questions/7362130/getting-video-dimension-resolution-width-x-height-from-ffmpeg
 
 ffprobe -v error -show_entries stream=width,height -of csv=p=0:s=x input.m4v
 
@@ -32,4 +35,25 @@ ffprobe -v error -show_entries stream=width,height -of csv=p=0:s=x input.m4v
 # my dimensions were 1920x1989, also notice that the thickness of the grid is 1 pixels larger than the area otherwise it doesn't work
 
 ffmpeg -i input.MOV -vf drawgrid=1915:1075:t=6,perspective=200:200:W-200:200:0:H:W:H:sense=destination perspective2.MOV
+
+#-----------------------------------------------------------------------------
+# Making a intro similar to Star Wars text
+
+# you can combine the rolling credits https://github.com/afrum/my_ffmpeg/blob/main/Rolling%20credits
+# drawbox and perspective options
+# I use drawbox twice the first drawbox makes a black background and the second one does a border 
+# if you take one or both of the drawbox out it will give you different effects
+
+ffmpeg -i input.MOV -vf "drawbox=t=fill,drawtext=textfile=prologue.txt:x=20:y=h-80*t:fontsize=50:fontcolor=yellow,drawbox,perspective=W/4:H/8:W-(W/4):H/8:0:H:W:H:sense=destination"  prologue.MOV
+
+#----------------------------------------------------------------------------
+# Boomer recording the TV effect
+# this is a quick effect of someone recording their TV, you can probably improve on this.
+# this combines 4 options drawbox, drawgrid, perspective and boxblur.
+# drawbox gives the black backgound, drawgrid puts the lines on the TV, perspective gives impression that the cell phone recorder is not facing straigh on,
+# boxblur makes the gridlines less sharp.
+
+ffmpeg -i input.MOV -vf "drawbox=t=20,drawgrid=h=10,perspective=0:0:W-(W/20):H/20:0:H:W-(W/20):H-(H/20):sense=destination,boxblur=3:1" -an boomertv.MOV
+
+
 
