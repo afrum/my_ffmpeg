@@ -53,7 +53,7 @@ ffmpeg -i input.MOV -vf "drawbox=t=fill,drawtext=textfile=prologue.txt:x=20:y=h-
 # drawbox gives the black backgound, drawgrid puts the lines on the TV, perspective gives impression that the cell phone recorder is not facing straigh on,
 # boxblur makes the gridlines less sharp.
 
-ffmpeg -i input.MOV -vf "drawbox=t=20,drawgrid=h=10,perspective=0:0:W-(W/20):H/20:0:H:W-(W/20):H-(H/20):sense=destination,boxblur=3:1" -an boomertv.MOV
+ffmpeg -i input.MOV -vf "drawbox=t=20,drawgrid=h=10,perspective=0:0:W-(W/20):H/20:0:H:W-(W/20):H-(H/20):sense=destination,boxblur=3:1" boomertv.MOV
 
 
 
