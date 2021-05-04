@@ -1,0 +1,4 @@
+# Add the elapsed time over the video
+ffplay -i input.MOV -vf "drawtext=text='%{pts\:hms\}':fontcolor=white:borderw=7:fontsize=50"
+
+# the time includes milliseconds 
