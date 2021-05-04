@@ -24,6 +24,7 @@
 + [Fade](fading) - in and out video and audio | [youtube example](https://youtu.be/5uUkBh3qUGc)|  
 + [Reverse](reverse) - making one or many videos in reverse | [youtube example](https://www.youtube.com/watch?v=3PfCwbNXAV0)|  
 + [Perspective](perspective) - changing shape of video to give an appearance of perspective | [youtube example](https://youtu.be/H0-4OK9Oszc)|
++ [time elapse](time_elapse) - show time to the millisecond of time showing while playing 
 ## Editing Multiple videos    
 + [Mozaic](mozaic) - example of 4 videos being played at once | [youtube example](https://www.youtube.com/watch?v=mfUDKNRMBRY)|  
 + [Side by Side](side_by_side) - 1 video split in 2 side by side, 1 sliding over another, 2 different videos side by side | [youtube example](https://www.youtube.com/watch?v=0Bv6FDD94M0)|  
