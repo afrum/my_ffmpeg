@@ -8,3 +8,30 @@ ffmpeg -i left.mp4 -i right.mp4 -filter_complex hstack output.mp4
 # Even if 1 video is of shorter length than the other. You can see the one on the right is shorter than the one on the left 
 # and so it just keeps the last frame while the other video keeps going. 
 # I'm not sure what is happening with the sound because both videos have similar background noise.
+
+ffmpeg -i top.mp4 -i bottom.mp4 -filter_complex vstack output.mp4
+
+ffmpeg \
+-i topleft.MOV -i middleleft.MOV -i bottomleft.MOV \
+-i topright.MOV -i middleright.MOV -i bottomright.MOV \
+-filter_complex \
+"[0:v][1:v][2:v]vstack=inputs=3[left];\
+[3:v][4:v][5:v]vstack=inputs=3[right]; \
+[left][right]hstack=inputs=2[v]" \
+-map "[v]" 2x3grid_output.MOV
+
+
+# just found a really good link about using hstack and vstack and then combining them all https://ottverse.com/stack-videos-horizontally-vertically-grid-with-ffmpeg/
+# 3x2 grid of videos:
+
+ffmpeg \
+-i topleft.MOV -i topmiddle.MOV \
+-i topright.MOV -i bottomleft.MOV \
+-i bottommiddle.MOV -i bottomright.MOV \
+-filter_complex \
+"[0:v][1:v][2:v]hstack=inputs=3[top];\
+[3:v][4:v][5:v]hstack=inputs=3[bottom];\
+[top][bottom]vstack=inputs=2[v]" \
+-map "[v]" 3x2_Output.MOV
+
+
