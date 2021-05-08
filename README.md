@@ -28,7 +28,7 @@
 ## Editing Multiple videos    
 + [Mozaic](mozaic) - example of 4 videos being played at once | [youtube example](https://www.youtube.com/watch?v=mfUDKNRMBRY)|  
 + [Side by Side](side_by_side) - 1 video split in 2 side by side, 1 sliding over another, 2 different videos side by side | [youtube example](https://www.youtube.com/watch?v=0Bv6FDD94M0)|  
-+ [Side by Side](hstack_side_by_side) - sit videos side by side by using hstack option in the command | [youtube example](https://www.youtube.com/watch?v=B0tNDgHJ_no)|  
++ [Side by Side](hstack_side_by_side) - sit videos side by side by using hstack and/or vstack option in the command | [youtube example](https://www.youtube.com/watch?v=B0tNDgHJ_no)|  
 + [Concatenate](concatenate) - combine videos 1 after the other | [youtube example](https://www.youtube.com/watch?v=YpM2Dlhx2zk)|  
 + [Different video types](concat_diff_fps) - combine videos of different file types one after the other | [youtube example](https://www.youtube.com/watch?v=_2Gsh1gFJBY)|  
 + [Blend](Blend) - example commands for blending 2 videos | old [youtube e.g.1](https://youtu.be/yrUGUrYfccY) new [youtube e.g.2](https://youtu.be/2CT7h9i2Eqk)|  
