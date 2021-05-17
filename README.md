@@ -8,7 +8,7 @@
 + [Scrolling](scrolling) - examples scrolling across a video or photo | [youtube example](https://www.youtube.com/watch?v=OYOmvSDEUZ0)|  
 + [Logos](logos) - examples of adding and removing logos | [youtube example](https://www.youtube.com/watch?v=SyFlTidTlOA&t=13s)|  
 + [Combining photos](photo_slideshow) - command and comments to make a video slideshow from images | [youtube example](https://www.youtube.com/watch?v=8x3Nldwx7Hk)|  
-+ [fade in an image] - the last command in this file is the command to fade in an image using overlay
++ [fade in an image](fadeimage) - the last command in this file is the command to fade in an image using overlay
 ## Editing a single Video  
 + [Crop and Crop detect](crop_detect) - example to crop a video and crop detect command to crop out padding | [youtube example](https://youtu.be/BjPQ3-cLUSo)|
 + [Adjust Brightness](brightness_and_saturation) - example command that adjusts brightness with comments | [youtube example](https://www.youtube.com/watch?v=el6njF-7fIA)|  
