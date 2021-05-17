@@ -1,0 +1,37 @@
+# geq general equation can do so much
+# I go through the examples http://ffmpeg.org/ffmpeg-all.html#Examples-110
+
+# this command will play a mirror image of the video along the y-axis
+ffplay -i input.MOV -vf "geq=p(W-X\,Y)" 
+
+# this command will create a horizontally flipped video:
+ffmpeg -i input.MOV -vf "geq=p(W-X\,Y)" horizontal_geq.MOV
+ 
+# to make a video to compare the input and output videos side by side:
+ffmpeg -i input.MOV -i horizontal_geq.MOV -an -filter_complex hstack=inputs=2 hstack_1.MOV
+
+# play a bidimentional sine wave with angle PI/3 and wavelength of 100 pixels
+ffplay -i input.MOV -vf "geq=128 + 100*sin(2*(PI/100)*(cos(PI/3)*(X-50*T) + sin(PI/3)*Y)):128:128"
+
+# create a bidimentional sine wave with angle PI/3 and wavelength of 100 pixels video
+ffmpeg -i input.MOV -vf "geq=128 + 100*sin(2*(PI/100)*(cos(PI/3)*(X-50*T) + sin(PI/3)*Y)):128:128" bidimensional_sine_wave.MOV
+
+# create fancy enigmatic moving light
+ffmpeg -i input.MOV -vf "geq=random(1)/hypot(X-cos(N*0.07)*W/2-W/2\,Y-sin(N*0.09)*H/2-H/2)^2*1000000*sin(N*0.02):128:128" enigmatic_light.MOV
+
+# slight edit to fancy enigmatic moving light command  
+ffmpeg -i input.MOV -vf "geq=N+105+random(1)/hypot(X-cos(N*0.07)*W/2-W/2\,Y-sin(N*0.09)*H/2-H/2)^2*1000000*sin(N*0.02):128:128" enigmatic_light2.MOV
+
+# emboss effect
+ffmpeg -i input.MOV -vf "format=gray,geq=lum_expr='(p(X,Y)+(256-p(X-4,Y-4)))/2'" emboss.MOV
+
+# RGB modified depending on pixel position
+ffmpeg -i input.MOV -vf"geq=r='X/W*r(X,Y)':g='(1-X/W)*g(X,Y)':b='(H-Y)/H*b(X,Y)'" modify_rgb.MOV
+
+# make a vignette effect
+ffmpeg -i input.MOV -vf "geq=lum=255*gauss((X/W-0.5)*3)*gauss((Y/H-0.5)*3)/gauss(0)/gauss(0),format=gray" radial_gradient.MOV
+
+# after creating the outputs e.g radial_gradient.MOV, enigmatic_light.MOV etc... you can blend these to get interesting effects
+ffmpeg -i radial_gradient.MOV -i input.MOV -filter_complex "[0:v]format=gbrp[f0],[1:v]format=gbrp[f1],[f0][f1]blend=all_mode=and" blendgradient.MOV
+ffmpeg -i enigmatic_light.MOV -i input.MOV -filter_complex "[0:v]format=gbrp[f0],[1:v]format=gbrp[f1],[f0][f1]blend=all_mode=phoenix" blendenigmatic.MOV
+ffmpeg -i bidimensional_sine_wave.MOV -i input.MOV -filter_complex "[0:v]format=gbrp[f0],[1:v]format=gbrp[f1],[f0][f1]blend=all_mode=negation" blendsine.MOV
