@@ -1,0 +1,15 @@
+
+# in response to a question by @Syahrizal Akbar 
+# who wanted a solution to fading 3 videos and then fade in an image:
+
+# xfade 2 videos
+ffmpeg -i 1.MOV -i 2.MOV -filter_complex xfade=transition=fade:duration=2:offset=1 output.MOV
+
+# xfade a 3rd video
+ffmpeg -i output.MOV -i 3.MOV -an -filter_complex xfade=transition=wipeup:duration=2:offset=3 output2.MOV
+
+# fade in an image using overlay:
+
+ffmpeg -loop 1 -i image.JPG -i output2.MOV -an -filter_complex "[1]fade=in:st=0:d=2:alpha=1[i];[0][i]overlay=shortest=1" output3.MOV
+
+# I got the image command from https://stackoverflow.com/questions/38633369/how-to-add-a-fade-in-within-overlay-with-ffmpeg
