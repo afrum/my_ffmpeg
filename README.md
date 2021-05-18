@@ -10,6 +10,7 @@
 + [Combining photos](photo_slideshow) - command and comments to make a video slideshow from images | [youtube example](https://www.youtube.com/watch?v=8x3Nldwx7Hk)|  
 + [Fade in an image](fadeimage) - the last command in this file is the command to fade in an image using overlay
 ## Editing a single Video  
++ [Generic equations](geq) - examples from ffmpeq documentation | [youtube example](https://youtu.be/OzZ6i37xFd8)
 + [Crop and Crop detect](crop_detect) - example to crop a video and crop detect command to crop out padding | [youtube example](https://youtu.be/BjPQ3-cLUSo)|
 + [Adjust Brightness](brightness_and_saturation) - example command that adjusts brightness with comments | [youtube example](https://www.youtube.com/watch?v=el6njF-7fIA)|  
 + [Adjust Saturation](brightness_and_saturation)  - example command that adjusts saturation with comments| [youtube example](https://www.youtube.com/watch?v=el6njF-7fIA)|  
