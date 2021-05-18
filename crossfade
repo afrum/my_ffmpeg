@@ -1,6 +1,17 @@
 # fading 2 videos into each other - youtube example https://youtu.be/hJH2tJTK8Kc
 # I got this from this link: https://ffmpeg.org/ffmpeg-filters.html#Examples-121
 
+# Syahrizal Akbar in the comments of the youtube video provided a solution
+# for joining multiple videos with fade effect using overlay that  
+# solves some of the problems with the cross fade command.
+
+ffmpeg -i video.mp4 -i video.mp4 -i video.mp4 -filter_complex \
+"[0:v]setpts=PTS-STARTPTS[v1]; \
+[1:v]format=yuva420p,fade=in:st=0:d=1:alpha=1,setpts=PTS-STARTPTS+(8/TB)[v2];
+[2:v]format=yuva420p,fade=in:st=0:d=1:alpha=1,setpts=PTS-STARTPTS+(16/TB)[v3];
+[v1][v2]overlay[v12]; [v12][v3]overlay,format=yuv420p[v]" \
+-map [v]  result.mp4
+
 # fading 2 videos together:
 ffmpeg -i 1.MOV -i 2.MOV -filter_complex xfade=transition=fade:duration=2:offset=5 output.MOV
 
@@ -10,9 +21,12 @@ ffmpeg -i 1.MOV -i 2.MOV -filter_complex xfade=transition=wipeup:duration=2:offs
 # video transitions from the center:
 ffmpeg -i 1.MOV -i 2.MOV -filter_complex xfade=transition=circleclose:duration=2:offset=3 output.MOV
 
-# this command crashed when I first ran it, I cut the video up into 10 second chunks and it worked fine.
+# the xfade command crashed when I first ran it, I cut the video up into 10 second chunks and it worked fine.
 # my other video on how to do that https://youtu.be/sAl1lZMVr5A
 # when I tried to concatenate the videos as I have done previously it came up with an error: Non-monotonous DTS in output stream 0:0
 # After a few different attempts I decided to use the overlay command which I have shown an example at 2:00
 # And heres a link to the documentaion on overlay: https://ffmpeg.org/ffmpeg-all.html#Commands-58
 # link to xfade: https://ffmpeg.org/ffmpeg-all.html#Examples-159
+
+
+
