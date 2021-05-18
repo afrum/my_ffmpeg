@@ -3,7 +3,7 @@
 
 # Syahrizal Akbar in the comments of the youtube video provided a solution
 # for joining multiple videos with fade effect using overlay that  
-# solves some of the problems with the cross fade command.
+# solves some of the problems with the cross fade command. Thanks Syahrizal.
 
 ffmpeg -i video.mp4 -i video.mp4 -i video.mp4 -filter_complex \
 "[0:v]setpts=PTS-STARTPTS[v1]; \
