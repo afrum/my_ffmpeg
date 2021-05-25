@@ -23,4 +23,11 @@ nullsrc=size=1000x500 [background];
 [background+left][right] overlay=shortest=1:x=500 
 " output.MOV
 
+# if you want to add an overlayed video for a specified period of time change the details
+# from overlay=shortest=1 to overlay=enable='between(t,5,10)' 
+# where the 5 is the start time the 10 is the end time
+# you can also use overlay=enable='lte(t,10)' 
+# lte is less than or equal to and in this example 10 seconds so it will show for the first 10 seconds
+# or overlay=enable='gte(t,10)'
+# gte is greater than or equal to and in this example it will start overla after 10 seconds till the end of the video.
 
