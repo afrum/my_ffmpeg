@@ -30,4 +30,6 @@ nullsrc=size=1000x500 [background];
 # lte is less than or equal to and in this example 10 seconds so it will show for the first 10 seconds
 # or overlay=enable='gte(t,10)'
 # gte is greater than or equal to and in this example it will start overla after 10 seconds till the end of the video.
+# if you want to delay the video change setpts=PTS-STARTPTS to setpts=PTS+2/TB
+# where 2 is the 2 seconds delay before that overlayed video will start playing.
 
