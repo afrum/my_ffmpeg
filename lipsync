@@ -1,0 +1,134 @@
+# using cartoon lip sync software and bash commands 
+# github: https://github.com/DanielSWolf/rhubarb-lip-sync
+# download program: https://github.com/DanielSWolf/rhubarb-lip-sync/releases
+# Step 1:Installation 
+#-----------------------------------
+# I found opensource program on github:
+# https://github.com/DanielSWolf/rhubarb-lip-sync
+# I had trouble with the repository so I downloaded the zip file
+# https://github.com/DanielSWolf/rhubarb-lip-sync/releases
+
+unzip Rhubarb-Lip-Sync-1.11.0-Linux.zip
+
+# Step 2: prepare audio and run rhubarb
+#--------------------------------------
+
+# command to change .mp3 to .wav (the program requires .wav or .ogg
+
+ffmpeg -i voice.mp3 voice.wav
+
+# run rhubarb
+
+./rhubarb -o output.txt voice.wav
+
+# Step 3 prepare mouth image files
+#---------------------------------
+# draw different mouths (there is a sample of mouth shapes here)
+# https://github.com/DanielSWolf/rhubarb-lip-sync/tree/master/img
+
+
+# Step 4 bash commands to make movie of mouth and add audio
+#-----------------------------------------------------------
+# (this is for a 24fps movie)
+# the program outputs the start time (seconds) and mouth letter 
+# I also want the finish time for each image which is the start
+# frame for the next mouth image -1. 
+
+awk 'NR!=1 {print int(($1*24)-1)}' output.txt > output2.txt
+
+# add last record
+awk 'END{print int($1*24)}' output.txt >> output2.txt
+
+# combine the 2 files
+awk 'NR==FNR{a[NR]=$0;next}{print a [FNR],$0}' output2.txt output.txt > output3.txt
+
+# making commands
+awk '{print "for ((i="int($2*24)"; i<="$1"; i++)); do convert lisa-"$3".png output_$(printf %05d $i).png ; done"}' output3.txt > output.sh
+ 
+# add #! /bin/bash to output.sh
+
+chmod +x output.sh
+
+./output.sh
+
+# add any optional commands see after "combine video and audio" commands
+# concatenate images
+
+cat *.png | ffmpeg -framerate 24 -f image2pipe -i - output.MOV
+
+# combine video and audio
+ffmpeg -i output.MOV -i voice.wav -map 1:0 -map 0:0 final.MOV
+
+# thanks for watching
+
+#-----------------------------------------------------------
+#-----------OPTIONAl--------BEGIN---------------------------
+# for these examples I had image files called
+# output_00000.png to output_20465.png
+# quarterhead.png, quarterhair.png, 
+# quartereyesclosed.png and quartereyesonly.png
+
+#if you have different images with head, mouth, hair
+#---------------------------------------adding mouth to head
+#make sure head image in in correct folder
+#if you want your new output to be in a new folder
+#you need to create the folder and state the address to
+#the folder
+
+mkdir newdir
+
+for VAR in $(ls output_*); do echo $VAR; composite $VAR quarterhead.png newdir/$VAR; done
+
+#----------------------------------------add hair
+# make sure hair image is in the folder
+# if you want to replace the image with the new image
+# then you don't need to make a new folder
+
+cd newdir/
+for VAR in $(ls output_*); do echo $VAR; composite quarterhair.png  $VAR $VAR; done
+
+#------------------------adding multiple layer images
+for VAR in $(ls output_*); do echo $VAR; 
+composite $VAR quarterhead.png newdir/$VAR
+composite quartereyesclosed.png newdir/$VAR newdir/$VAR
+composite quarterhair.png newdir/$VAR newdir/$VAR; done
+
+#------------------------------------------------------------
+#-----------------adding blinking by using nested for loop
+#--------breaking up the incremental number of the 
+# output image file so every 200 image frames are
+# thirteen closed eyes frames.
+
+for i in $(seq -w 000 2 204)
+do
+	for j in $(seq -w 00 1 13 )
+	do
+	echo $i$j
+	
+	composite newdir/newdir/output_$i$j.png quarterhead.png newdir/newdir/output_$i$j.png
+	composite quartereyesclosed.png newdir/newdir/output_$i$j.png newdir/newdir/output_$i$j.png
+	composite quarterhair.png newdir/newdir/output_$i$j.png newdir/newdir/output_$i$j.png
+	done
+done
+
+#----------------making a set of images transparent
+
+for i in {05079..11796}
+do 
+echo $i
+convert output_$i.png -matte -channel A +level 0,50% +channel transprnt/output_$i.png
+done
+
+#--------------adding images to bottom right of background image
+
+for i in {11797..20465}
+do 
+echo $i
+composite -gravity SouthEast newdir/output_$i.png slideframes/out$i.png newdir/finished/final_$i.png
+done
+#------------OPTIONAL--------END-----------------------------
+
+
+
+
+
