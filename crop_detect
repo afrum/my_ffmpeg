@@ -7,5 +7,6 @@ ffplay -i input.mkv -vf cropdetect
 # this will give you different options of where it thinks the border is over the time of the video. You can see the output in the terminal.
 
 # then you can use the information to crop your video here's an example, I picked the coordinates I thought best fit from the many given:
+# the four crop inputs are (width:height:x coordinates of top left corner: y coordinates of top left corner) in pixels
 
 ffmpeg -i input.mkv -vf crop=960:960:480:60 output.mkv
