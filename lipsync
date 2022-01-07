@@ -53,8 +53,13 @@ chmod +x output.sh
 
 # add any optional commands see after "combine video and audio" commands
 # concatenate images
+# I was using the commented out command but I found a new one below that
+# the new command is good with .png that have transparency and making a .mov
+# will keep the transparent parts in the video and then you can overlay the video
 
-cat *.png | ffmpeg -framerate 24 -f image2pipe -i - output.MOV
+#cat *.png | ffmpeg -framerate 24 -f image2pipe -i - output.MOV
+
+ffmpeg -framerate 24 -i output_%05d.png -vcodec png  output.mov
 
 # combine video and audio
 ffmpeg -i output.MOV -i voice.wav -map 1:0 -map 0:0 final.MOV
