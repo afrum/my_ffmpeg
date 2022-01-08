@@ -1,5 +1,5 @@
 ## Text, lines, shapes  
-+ [Title images](/Adding%20Titles) - code with comments on adding titles to video | [youtube example](https://www.youtube.com/watch?v=xrKnMWGYTxo)|  [youtube example 2](https://youtu.be/V8O3H6nBJ40)
++ [Title images](/Adding%20Titles) - code with comments on adding titles to video | [youtube example](https://www.youtube.com/watch?v=xrKnMWGYTxo)|  [youtube example 2](https://youtu.be/V8O3H6nBJ40)|
 + [Text with special characters](/text%20with%20special%20characters) - example code with comments | [youtube example](https://www.youtube.com/watch?v=T0oXovKTiiU)|  
 + [Rolling credits](/Rolling%20credits) - example code of credits scrolling up from bottom | [youtube example](https://www.youtube.com/watch?v=AnsaJLUIPjs)|  
 + [Drawing a grid](Draw%20grid%20lines) - examples to add gridlines to a video | [youtube example](https://www.youtube.com/watch?v=3ko598TeSjs)|  
