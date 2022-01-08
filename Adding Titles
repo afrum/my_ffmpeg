@@ -1,4 +1,6 @@
 # Adding Titles in different ways - output example on youtube https://youtu.be/xrKnMWGYTxo
+# If you want to use .ass I have done a new video
+# that covers adding text using imagemagick,drawtext or .ass https://youtu.be/V8O3H6nBJ40 
 #-------------------------------------------------
 # Using drawtext command for a centered title
 
