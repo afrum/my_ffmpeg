@@ -41,4 +41,4 @@
 ## Audio  
 + [Add Audio](add_audio) - adding audio to a video | [youtube example](https://www.youtube.com/watch?v=BYEdEUCT7NI)|  
 + [Fade Audio](fade_audio) - fading in audio | [youtube example](https://youtu.be/5uUkBh3qUGc)|
-+ [Change Audio and video speed](speedvid.sh) - speed up or slow down video
++ [Change Audio and video speed](https://github.com/afrum/my_bash/blob/main/speedvid.sh) - speed up or slow down video
