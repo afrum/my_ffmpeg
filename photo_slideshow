@@ -3,7 +3,7 @@
 cat *.JPG | ffmpeg -framerate 3 -f image2pipe -i - output.MOV
 
 
-
+# found this helpful website with examples https://trac.ffmpeg.org/wiki/Slideshow
 # cat * .JPG = this command collected all the files I had in the folder that ended with .JPG, 
 # so if your files end with a different suffix use that.
 # then it was piped thru to ffmpeg.
