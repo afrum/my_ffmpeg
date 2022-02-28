@@ -37,7 +37,9 @@
 + [Blend](Blend) - example commands for blending 2 videos | old [youtube e.g.1](https://youtu.be/yrUGUrYfccY) new [youtube e.g.2](https://youtu.be/2CT7h9i2Eqk)|  
 + [Overlay](overlay) - different examples of overlay commands | [youtube example](https://www.youtube.com/watch?v=i-yWKUVENqg)|  
 + [Overlay](chain_overlay) - chain several overlay in cascade | [youtube example](https://www.youtube.com/watch?v=bsRJNnymTxg)|  
-+ [Cross fade](crossfade) - fading 2 videos together | [youtube example](https://www.youtube.com/watch?v=hJH2tJTK8Kc)|  
++ [Cross fade](crossfade) - fading 2 videos together | [youtube example](https://www.youtube.com/watch?v=hJH2tJTK8Kc)| 
++ [pixelate](pixelcommand) - making a pixelated video or image | [youtube example](https://youtu.be/yws7sCaUE40)
++ [mask](pixelcommand) - using alphamerge command to overlay irregular shaped areas | [youtube example]( https://youtu.be/yws7sCaUE40)
 ## Audio  
 + [Add Audio](add_audio) - adding audio to a video | [youtube example](https://www.youtube.com/watch?v=BYEdEUCT7NI)|  
 + [Fade Audio](fade_audio) - fading in audio | [youtube example](https://youtu.be/5uUkBh3qUGc)|
