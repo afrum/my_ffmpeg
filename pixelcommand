@@ -1,0 +1,43 @@
+#pixelate
+#------------------------------------------------------
+#two steps:
+
+ffmpeg -i input.MOV -vf "scale='iw/10:-1'" scaled.MOV
+ffmpeg -i scaled.MOV -vf "scale='iw*10:-1':flags=neighbor" pixeled.MOV
+#-------------------------------------------------------
+#https://stackoverflow.com/questions/9093549/ffmpeg-how-to-add-pixellate-effect
+
+num=5
+input=input.MOV
+output=output.MOV
+
+ffmpeg -i $input -filter_complex \
+"[0:v] scale='iw/$num:-1', scale='iw*$num:-1:flags=neighbor'" $output
+
+#------------------------------------------------------
+# to avoid errors, if your inputs have no sound remove the "-map 0:a" option
+ 
+ffmpeg -i pixelated_input.MOV -i mask.png -i input.MOV -filter_complex "\
+[0:v][1:v] alphamerge [tmp1];\
+[2:v][tmp1] overlay [v]"\
+  -map "[v]" -map 0:a outpix.mp4
+#------------------------------------------------
+# to avoid errors: make sure the division equation results in a whole number without remainders.
+
+ffmpeg -i input.MOV -i mask.png -filter_complex \
+"[0:v]split=2[out0][out1];\
+[out0]scale='iw/10:-1'\
+,scale='iw*10:-1:flags=neighbor'[tmp1];\
+[tmp1][1:v] alphamerge [tmp2];\
+[out1][tmp2] overlay [v]"\
+ -map "[v]" -map 0:a outpxs.mp4
+
+#mask page:
+# https://superuser.com/questions/901099/ffmpeg-apply-blur-over-face
+
+#alphamerge page:
+# https://hhsprings.bitbucket.io/docs/programming/examples/ffmpeg/manipulating_video_colors/alphamerge_alphaextract_more_.html
+
+#tutorial on filtergraphs:
+# https://medium.com/craftsmenltd/ffmpeg-basic-filter-graphs-74f287dc104e
+
