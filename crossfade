@@ -21,6 +21,13 @@ ffmpeg -i 1.MOV -i 2.MOV -filter_complex xfade=transition=wipeup:duration=2:offs
 # video transitions from the center:
 ffmpeg -i 1.MOV -i 2.MOV -filter_complex xfade=transition=circleclose:duration=2:offset=3 output.MOV
 
+# xfade 5 videos in one command you can change transition, duration and offset to suit
+ffmpeg -i 1.MOV -i 2.MOV -i 3.MOV -i 4.MOV -i 5.MOV -filter_complex \
+"[0:v][1:v] xfade=transition=fade:duration=2:offset=5 [tmp1];\
+[tmp1][2:v] xfade=transition=fade:duration=2:offset=8 [tmp2];\
+[tmp2][3:v] xfade=transition=circleclose:duration=2:offset=10 [tmp3];\
+[tmp3][4:v] xfade=transition=wipeup:duration=2:offset=12" multifade.MOV
+
 # the xfade command crashed when I first ran it, I cut the video up into 10 second chunks and it worked fine.
 # my other video on how to do that https://youtu.be/sAl1lZMVr5A
 # when I tried to concatenate the videos as I have done previously it came up with an error: Non-monotonous DTS in output stream 0:0
