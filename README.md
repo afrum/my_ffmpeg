@@ -10,7 +10,7 @@
 + [Combining photos](photo_slideshow) - command and comments to make a video slideshow from images | [youtube example](https://www.youtube.com/watch?v=8x3Nldwx7Hk)|  
 + [Fade in an image](fadeimage) - the last command in this file is the command to fade in an image using overlay
 + [Cartoon lipsync](lipsync) - a bunch of commands to create batch of images that are lipsynced to audio wav file | [youtube example](https://youtu.be/ffyfdT4OJCk)|
-+ [morph images together](morph_frames) - morphs frames to give transition between two distinct frames | https://youtu.be/HS83Ps60XCE
++ [morph images together](morph_frames) - morphs frames to give transition between two distinct frames | [youtube example](https://youtu.be/HS83Ps60XCE)
 ## Editing a single Video 
 + [Generic equations](geq) - examples from ffmpeg documentation | [youtube example](https://youtu.be/OzZ6i37xFd8)
 + [Crop and Crop detect](crop_detect) - example to crop a video and crop detect command to crop out padding | [youtube example](https://youtu.be/BjPQ3-cLUSo)|
