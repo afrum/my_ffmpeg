@@ -1,0 +1,20 @@
+#link to video example https://youtu.be/HS83Ps60XCE
+
+#heres a link to the documentation:
+#https://ffmpeg.org/ffmpeg-all.html#minterpolate
+
+#heres a helpful question and answer I found:
+#https://stackoverflow.com/questions/71178068/video-morph-between-two-images-ffmpeg-minterpolate
+
+#the commands I used. (I used low fps because my computer #crashed when I used 24 fps, try with the lower fps first, #if you have a good computer you can go higher)
+
+#first I wanted to combine a number of images into a single video:
+cat *.png | ffmpeg -framerate .5 -f image2pipe -i - input.mp4
+
+#I use the video I just created called input.mp4 for the minterpotaltion command:
+ffmpeg -i input.mp4 -vf minterpolate=fps=6 output.mp4
+
+#this command below is for a blend effect:
+ffmpeg -i input.mp4 -vf minterpolate=fps=4:mi_mode=blend blend-minterpolate.mp4
+
+#have a nice day.
