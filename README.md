@@ -11,6 +11,7 @@
 + [Fade in an image](fadeimage) - the last command in this file is the command to fade in an image using overlay
 + [Cartoon lipsync](lipsync) - a bunch of commands to create batch of images that are lipsynced to audio wav file | [youtube example](https://youtu.be/ffyfdT4OJCk)|
 + [morph images together](morph_frames) - morphs frames to give transition between two distinct frames | [youtube example](https://youtu.be/HS83Ps60XCE)
++ [create images from video](https://gist.github.com/FranciscoG/c63760be6d77ab44d919772b2b7b8f82) - found this useful gist (not mine) that extracts frames from a video.
 ## Editing a single Video 
 + [Generic equations](geq) - examples from ffmpeg documentation | [youtube example](https://youtu.be/OzZ6i37xFd8)
 + [Crop and Crop detect](crop_detect) - example to crop a video and crop detect command to crop out padding | [youtube example](https://youtu.be/BjPQ3-cLUSo)|
